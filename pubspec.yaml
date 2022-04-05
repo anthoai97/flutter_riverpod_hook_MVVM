@@ -1,0 +1,83 @@
+name: dayaway_partner
+description: DayAway Partner App.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.1 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # For Architecture
+  flutter_hooks: ^0.18.2+1
+  hooks_riverpod: ^1.0.3
+
+  # For models
+  json_serializable: ^6.1.5
+  freezed_annotation: ^1.1.0
+
+  # For Navigation
+  auto_route: ^3.2.4
+
+  # For Networking
+  dio: ^4.0.4
+  dio_firebase_performance: ^0.3.1-dev.3
+  retrofit: ^3.0.1+1
+
+  # For User-Agent Client Hints
+  ua_client_hints: ^1.1.0
+
+  # For convert between Enum and String
+  enum_to_string: ^2.0.1
+  
+  # For firebase
+  firebase_core: ^1.13.1
+  firebase_crashlytics: ^2.5.3
+  firebase_dynamic_links: ^4.1.1
+
+  # For Ui
+  flutter_svg: ^1.0.3
+  google_fonts: ^2.3.1
+  intl: ^0.17.0
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+  cached_network_image: ^3.2.0
+  shared_preferences: ^2.0.13
+  url_launcher: ^6.0.20
+  
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  build_runner:
+
+  # For Assets
+  flutter_gen_runner:
+
+  # For model
+  freezed: ^1.1.1
+
+  # For Networking
+  retrofit_generator: '>=4.0.0 <5.0.0'
+
+  # For Navigation
+  auto_route_generator: ^3.0.1
+
+  # For Analyzer
+  flutter_lints: ^1.0.0
+
+
+flutter_gen:
+  integrations:
+    flutter_svg: true
+
+flutter:
+  uses-material-design: true
