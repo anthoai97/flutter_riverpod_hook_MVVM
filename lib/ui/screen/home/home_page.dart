@@ -8,7 +8,6 @@ class HomePage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(appThemeProvider);
-    final themeMode = ref.read(appThemeModeProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -16,27 +15,18 @@ class HomePage extends HookConsumerWidget {
       ),
       body: Column(
         children: [
-          Center(
-            child: TextButton(
-              onPressed: () {
-                if (themeMode == ThemeMode.dark) {
-                  ref.read(appThemeModeProvider.notifier).state =
-                      ThemeMode.light;
-                } else {
-                  ref.read(appThemeModeProvider.notifier).state =
-                      ThemeMode.dark;
-                }
-              },
-              child: Text(
-                'Chagne THeme',
-                style: theme.textTheme.h50,
-              ),
-            ),
+          TextButton(
+            onPressed: () {
+              var themeMode = ref.read(appThemeModeProvider);
+              if (themeMode == ThemeMode.dark) {
+                ref.read(appThemeModeProvider.notifier).state = ThemeMode.light;
+              } else {
+                ref.read(appThemeModeProvider.notifier).state = ThemeMode.dark;
+              }
+            },
+            child: const Text('Chagne THeme'),
           ),
-          Text(
-            'Chagne THeme',
-            style: theme.textTheme.h50,
-          ),
+          const Text('Chagne THeme'),
         ],
       ),
     );

@@ -22,14 +22,30 @@ class AppTextTheme {
     );
 
     return AppTextTheme._(
-      h10: const TextStyle(fontSize: FontSize.pt10).merge(_normalRegular),
-      h20: const TextStyle(fontSize: FontSize.pt12).merge(_normalRegular),
-      h30: const TextStyle(fontSize: FontSize.pt14).merge(_normalRegular),
-      h40: const TextStyle(fontSize: FontSize.pt16).merge(_normalRegular),
-      h50: const TextStyle(fontSize: FontSize.pt20).merge(_normalRegular),
-      h60: const TextStyle(fontSize: FontSize.pt24).merge(_normalRegular),
-      h70: const TextStyle(fontSize: FontSize.pt32).merge(_normalRegular),
-      h80: const TextStyle(fontSize: FontSize.pt40).merge(_normalRegular),
+      h10: GoogleFonts.poppins(
+          textStyle:
+              const TextStyle(fontSize: FontSize.pt10).merge(_normalRegular)),
+      h20: GoogleFonts.poppins(
+          textStyle:
+              const TextStyle(fontSize: FontSize.pt12).merge(_normalRegular)),
+      h30: GoogleFonts.poppins(
+          textStyle:
+              const TextStyle(fontSize: FontSize.pt14).merge(_normalRegular)),
+      h40: GoogleFonts.poppins(
+          textStyle:
+              const TextStyle(fontSize: FontSize.pt16).merge(_normalRegular)),
+      h50: GoogleFonts.poppins(
+          textStyle:
+              const TextStyle(fontSize: FontSize.pt20).merge(_normalRegular)),
+      h60: GoogleFonts.poppins(
+          textStyle:
+              const TextStyle(fontSize: FontSize.pt24).merge(_normalRegular)),
+      h70: GoogleFonts.poppins(
+          textStyle:
+              const TextStyle(fontSize: FontSize.pt32).merge(_normalRegular)),
+      h80: GoogleFonts.poppins(
+          textStyle:
+              const TextStyle(fontSize: FontSize.pt40).merge(_normalRegular)),
     );
   }
 

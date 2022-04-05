@@ -41,9 +41,66 @@ class AppTheme {
   final AppTextTheme textTheme;
   final AppColors appColors;
 
+  static ButtonThemeData _buildButtonThemeData(AppColors colors) {
+    return const ButtonThemeData().copyWith(
+      height: 44,
+      minWidth: double.infinity,
+      disabledColor: colors.disabled,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(4),
+      ),
+      splashColor: Colors.white.withOpacity(0.1),
+    );
+  }
+
+  static const EdgeInsets buttonPadding =
+      EdgeInsets.symmetric(vertical: 4, horizontal: 20);
+
+  static final TextStyle buttonTextStyle = GoogleFonts.poppins(
+      textStyle: const TextStyle(
+    color: Colors.white,
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+  ));
+
+  static TextButtonThemeData _buildTextButtonThemeData(AppColors appColors) {
+    return TextButtonThemeData(
+      style: TextButton.styleFrom(
+        primary: Colors.white,
+        backgroundColor: appColors.primary100,
+        alignment: Alignment.center,
+        padding: buttonPadding,
+        textStyle: buttonTextStyle,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4),
+        ),
+        onSurface: Colors.white,
+      ),
+    );
+  }
+
+  static OutlinedButtonThemeData _buildOutlineButtonTheme(AppColors appColors) {
+    return OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        primary: appColors.primary100,
+        alignment: Alignment.center,
+        padding: buttonPadding,
+        textStyle: buttonTextStyle,
+        side: BorderSide(
+          width: 1,
+          color: appColors.primary100,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(2),
+        ),
+      ),
+    );
+  }
+
   factory AppTheme.light() {
     const mode = ThemeMode.light;
     final appColors = AppColors.light();
+
     final themeData = ThemeData.light().copyWith(
       scaffoldBackgroundColor: appColors.background,
       textTheme: GoogleFonts.poppinsTextTheme(
@@ -56,13 +113,11 @@ class AppTheme {
         backgroundColor: appColors.error,
         behavior: SnackBarBehavior.floating,
       ),
-      textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(
-          backgroundColor: appColors.primary100,
-          // Btn color
-          primary: Colors.white,
-        ),
-      ),
+      brightness: Brightness.dark,
+      splashFactory: InkRipple.splashFactory,
+      buttonTheme: _buildButtonThemeData(appColors),
+      textButtonTheme: _buildTextButtonThemeData(appColors),
+      outlinedButtonTheme: _buildOutlineButtonTheme(appColors),
     );
 
     return AppTheme(
@@ -76,6 +131,7 @@ class AppTheme {
   factory AppTheme.dark() {
     const mode = ThemeMode.dark;
     final appColors = AppColors.dark();
+
     final themeData = ThemeData.dark().copyWith(
       scaffoldBackgroundColor: appColors.background,
       textTheme: GoogleFonts.poppinsTextTheme(
@@ -84,17 +140,15 @@ class AppTheme {
               displayColor: Colors.white,
             ),
       ),
+      brightness: Brightness.dark,
       snackBarTheme: SnackBarThemeData(
         backgroundColor: appColors.error,
         behavior: SnackBarBehavior.floating,
       ),
-      textButtonTheme: TextButtonThemeData(
-        style: TextButton.styleFrom(
-          backgroundColor: appColors.primary100,
-          // Btn color
-          primary: Colors.white,
-        ),
-      ),
+      splashFactory: InkRipple.splashFactory,
+      buttonTheme: _buildButtonThemeData(appColors),
+      textButtonTheme: _buildTextButtonThemeData(appColors),
+      outlinedButtonTheme: _buildOutlineButtonTheme(appColors),
     );
 
     return AppTheme(
