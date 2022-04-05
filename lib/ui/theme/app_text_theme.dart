@@ -14,11 +14,12 @@ class AppTextTheme {
     required this.h80,
   });
 
-  factory AppTextTheme() {
-    const _normalRegular = TextStyle(
+  factory AppTextTheme({required defaultTextColor}) {
+    final _normalRegular = TextStyle(
       fontWeight: FontWeight.w400,
       height: 1.5,
       leadingDistribution: TextLeadingDistribution.even,
+      color: defaultTextColor,
     );
 
     return AppTextTheme._(

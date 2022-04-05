@@ -1,6 +1,7 @@
 import 'package:dayaway_partner/data/local/shared_pref_service.dart';
 import 'package:dayaway_partner/ui/theme/app_colors.dart';
 import 'package:dayaway_partner/ui/theme/app_text_theme.dart';
+import 'package:dayaway_partner/ui/theme/font_size.dart';
 import 'package:enum_to_string/enum_to_string.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -41,22 +42,25 @@ class AppTheme {
   final AppTextTheme textTheme;
   final AppColors appColors;
 
+  static const double _buttonRadius = 2.0;
+
   static ButtonThemeData _buildButtonThemeData(AppColors colors) {
     return const ButtonThemeData().copyWith(
       height: 44,
+      padding: _buttonPadding,
       minWidth: double.infinity,
       disabledColor: colors.disabled,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(4),
+        borderRadius: BorderRadius.circular(_buttonRadius),
       ),
       splashColor: Colors.white.withOpacity(0.1),
     );
   }
 
-  static const EdgeInsets buttonPadding =
-      EdgeInsets.symmetric(vertical: 4, horizontal: 20);
+  static const EdgeInsets _buttonPadding =
+      EdgeInsets.symmetric(horizontal: DimensionsDef.globalPadding);
 
-  static final TextStyle buttonTextStyle = GoogleFonts.poppins(
+  static final TextStyle _buttonTextStyle = GoogleFonts.poppins(
       textStyle: const TextStyle(
     color: Colors.white,
     fontSize: 14,
@@ -69,10 +73,10 @@ class AppTheme {
         primary: Colors.white,
         backgroundColor: appColors.primary100,
         alignment: Alignment.center,
-        padding: buttonPadding,
-        textStyle: buttonTextStyle,
+        padding: _buttonPadding,
+        textStyle: _buttonTextStyle,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(4),
+          borderRadius: BorderRadius.circular(_buttonRadius),
         ),
         onSurface: Colors.white,
       ),
@@ -84,14 +88,11 @@ class AppTheme {
       style: OutlinedButton.styleFrom(
         primary: appColors.primary100,
         alignment: Alignment.center,
-        padding: buttonPadding,
-        textStyle: buttonTextStyle,
-        side: BorderSide(
-          width: 1,
-          color: appColors.primary100,
-        ),
+        padding: _buttonPadding,
+        textStyle: _buttonTextStyle,
+        side: BorderSide(width: 1, color: appColors.primary100),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(2),
+          borderRadius: BorderRadius.circular(_buttonRadius),
         ),
       ),
     );
@@ -123,7 +124,7 @@ class AppTheme {
     return AppTheme(
       mode: mode,
       data: themeData,
-      textTheme: AppTextTheme(),
+      textTheme: AppTextTheme(defaultTextColor: appColors.primary100),
       appColors: appColors,
     );
   }
@@ -154,7 +155,7 @@ class AppTheme {
     return AppTheme(
       mode: mode,
       data: themeData,
-      textTheme: AppTextTheme(),
+      textTheme: AppTextTheme(defaultTextColor: appColors.primary100),
       appColors: appColors,
     );
   }

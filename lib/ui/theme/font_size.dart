@@ -32,3 +32,8 @@ abstract class FontSize {
   /// 8pt
   static const double pt8 = 8;
 }
+
+abstract class DimensionsDef {
+  /// Global Padding 16
+  static const double globalPadding = 16.0;
+}

@@ -1,0 +1,25 @@
+{
+  "@@locale": "ja",
+  "ok": "OK",
+  "cancel": "CANCEL",
+  "news": "ニュース",
+  "signIn": "ログイン",
+  "video": "ビデオ",
+  "googleSignIn": "Google サインイン",
+  "googleSignOut": "サインアウト",
+  "detail": "詳細",
+  "error": "エラーが発生しました",
+  "reload": "更新する",
+  "fetchFailed": "データの取得に失敗しました",
+  "pleaseRetry": "もう一度お試しください",
+  "noResult": "データがありません!",
+  "noTitle":  "No Title",
+  "displayName": "Display Name",
+  "email": "メール",
+  "uid": "ユーザID",
+
+  "dashboard": "Dashboard",
+  "booking": "Booking",
+  "experience": "Experience",
+  "setting": "Setting"
+}

@@ -81,3 +81,11 @@ flutter_gen:
 
 flutter:
   uses-material-design: true
+  generate: true
+
+  assets:
+    - assets/images/
+    - assets/svgs/
+    - assets/fonts/
+    - assets/fonts/Cormorant/
+    - assets/fonts/Poppins/

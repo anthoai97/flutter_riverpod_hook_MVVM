@@ -37,6 +37,7 @@ class AppColors {
     required this.disabled,
     required this.error,
     required this.divider,
+    required this.primary70,
   });
 
   factory AppColors.light() {
@@ -47,6 +48,7 @@ class AppColors {
       divider: Colors.black54,
       primary100: Color(0xff2D2D2D),
       accent: Color(0xff158498),
+      primary70: Color(0xff7a7a7a),
     );
   }
 
@@ -56,7 +58,8 @@ class AppColors {
       disabled: Colors.white12,
       error: Color(0xffff5544),
       divider: Colors.white54,
-      primary100: Color(0xff158498),
+      primary100: Color.fromARGB(111, 21, 132, 152),
+      primary70: Color(0xB37a7a7a),
       accent: Color(0xff158498),
     );
   }
@@ -68,4 +71,5 @@ class AppColors {
   final Color divider;
 
   final Color primary100;
+  final Color primary70;
 }
