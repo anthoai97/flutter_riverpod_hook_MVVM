@@ -66,7 +66,7 @@ class HomePage extends HookConsumerWidget {
       extendBody: true,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        backgroundColor: theme.appColors.primary100,
+        backgroundColor: theme.appColors.accent,
         child: Container(
           alignment: Alignment.center,
           child: ImgView.asset(

@@ -19,6 +19,10 @@ format-analyze:
 build-runner:
 	flutter pub run build_runner build --delete-conflicting-outputs
 
+.PHONY: build-watch
+build-watch:
+	flutter pub run build_runner watch --delete-conflicting-outputs
+
 .PHONY: run-dev
 run-dev:
 	flutter run --flavor development --dart-define=FLAVOR=development --target lib/main.dart

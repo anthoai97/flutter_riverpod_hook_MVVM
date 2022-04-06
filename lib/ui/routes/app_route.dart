@@ -5,16 +5,23 @@ import 'package:dayaway_partner/ui/screen/experience/experience_page.dart';
 import 'package:dayaway_partner/ui/screen/home/home_page.dart';
 import 'package:dayaway_partner/ui/screen/profile/profile_page.dart';
 import 'package:dayaway_partner/ui/screen/qr_page/qr_page.dart';
+import 'package:dayaway_partner/ui/screen/splash/splash_screen.dart';
 
 export 'app_route.gr.dart';
 
-@AdaptiveAutoRouter(
+@CustomAutoRouter(
   replaceInRouteName: 'Page,Route',
+  transitionsBuilder: TransitionsBuilders.fadeIn,
+  durationInMilliseconds: 400,
   routes: <AutoRoute>[
     AutoRoute(
+      page: SplashPage,
       path: '/',
-      page: HomePage,
       initial: true,
+    ),
+    AutoRoute(
+      page: HomePage,
+      path: 'home',
       children: [
         AutoRoute(
           path: 'dashboard',
