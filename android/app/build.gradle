@@ -24,6 +24,8 @@ if (flutterVersionName == null) {
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 
 android {
     compileSdkVersion flutter.compileSdkVersion
@@ -43,7 +45,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.hcg.dayawaypartner"
+        applicationId "com.hcg.dayaway.partner"
         minSdkVersion 21
         targetSdkVersion 31
         versionCode flutterVersionCode.toInteger()
@@ -58,6 +60,36 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    lintOptions {                                                                
+    		checkReleaseBuilds false                                                   
+   	}
+
+	flavorDimensions "default"
+
+    // Config App Name for Android
+    productFlavors {
+        dev {
+            dimension "default"
+            applicationIdSuffix ".dev"
+            resValue "string", "app_name", "dev-Partner"
+        }
+        qa {
+            dimension "default"
+            applicationIdSuffix ".qa"
+            resValue "string", "app_name", "qa-Partner"
+        }
+        staging {
+            dimension "default"
+            applicationIdSuffix ".stg"
+            resValue "string", "app_name", "stag-Partner"
+        }
+        production {
+            dimension "default"
+            applicationIdSuffix ""
+            resValue "string", "app_name", "DayAway Partner"
+        }
+    }
 }
 
 flutter {
@@ -66,4 +98,5 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+	implementation platform('com.google.firebase:firebase-bom:29.1.0')
 }

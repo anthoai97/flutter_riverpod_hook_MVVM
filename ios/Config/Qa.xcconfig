@@ -1,0 +1,13 @@
+#include "Flutter/Generated.xcconfig"
+#include "Pods/Target Support Files/Pods-Runner/Pods-Runner.release-qa.xcconfig"
+TRACK_WIDGET_CREATION=
+
+FLUTTER_FLAVOR=qa
+FLUTTER_TARGET=$PROJECT_DIR/../lib/main.dart
+PRODUCT_BUNDLE_IDENTIFIER=com.hcg.dayaway.partner.qa
+DISPLAY_NAME=qa-Partner
+
+FIREBASE_DIR=$PROJECT_DIR/$PROJECT_NAME/Resources/Firebase/Qa
+
+// GOOGLE prefix key configs were copied from GoogleService-Info.plist
+GOOGLE_REVERSED_CLIENT_ID = com.googleusercontent.apps.704642875635-8pkuugcsj0tel0boggg8b7c56ea8jmaq

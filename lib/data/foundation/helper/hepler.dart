@@ -1,4 +1,6 @@
+import 'package:dayaway_partner/data/foundation/constants.dart';
 import 'package:dayaway_partner/data/foundation/helper/shared_pref_manager.dart';
+import 'package:dayaway_partner/data/foundation/log.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
@@ -12,10 +14,12 @@ class Helper {
         _sharedPrefManager(),
 
         // Firebase
-        // initFirebaseLibrary(),
+        initFirebaseLibrary(),
         //
       ],
     );
+
+    Log.debug(Constants.of().packageName, title: Constants.of().env);
   }
 
   static Future<void> _sharedPrefManager() async {

@@ -1,0 +1,13 @@
+#include "Flutter/Generated.xcconfig"
+#include "Pods/Target Support Files/Pods-Runner/Pods-Runner.release-production.xcconfig"
+TRACK_WIDGET_CREATION=
+
+FLUTTER_FLAVOR=production
+FLUTTER_TARGET=$PROJECT_DIR/../lib/main.dart
+PRODUCT_BUNDLE_IDENTIFIER=com.hcg.dayaway.partner
+DISPLAY_NAME=DayAway Partner
+
+FIREBASE_DIR=$PROJECT_DIR/$PROJECT_NAME/Resources/Firebase/Production
+
+// GOOGLE prefix key configs were copied from GoogleService-Info.plist
+GOOGLE_REVERSED_CLIENT_ID = com.googleusercontent.apps.704642875635-jn1lifqc0sa5r3njfiuq1lb1h6464og9

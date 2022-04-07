@@ -1,0 +1,186 @@
+{
+  "project_info": {
+    "project_number": "704642875635",
+    "project_id": "dayaway-partner-app",
+    "storage_bucket": "dayaway-partner-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704642875635:android:57a0c4d530e39cffc4f786",
+        "android_client_info": {
+          "package_name": "com.hcg.dayaway.partner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704642875635-6ble9dq8ei0qlrm1qadaeceeqqc59541.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hcg.dayaway.partner",
+            "certificate_hash": "4a0495d723f2601dddc734f3dd0eeafee4868fc9"
+          }
+        },
+        {
+          "client_id": "704642875635-6ede1bgil9tge2bu2c320cfifbhvbgiv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAURpWgdPKbDnpVFbtXVF1GwrxNDG4ClAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704642875635-6ede1bgil9tge2bu2c320cfifbhvbgiv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "704642875635-8pkuugcsj0tel0boggg8b7c56ea8jmaq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hcg.dayaway.partner.qa"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704642875635:android:8ab2fbf49e34d2c3c4f786",
+        "android_client_info": {
+          "package_name": "com.hcg.dayaway.partner.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704642875635-n3kt0pr9siajc2rcvb8cvrlcubdutv94.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hcg.dayaway.partner.dev",
+            "certificate_hash": "4a0495d723f2601dddc734f3dd0eeafee4868fc9"
+          }
+        },
+        {
+          "client_id": "704642875635-6ede1bgil9tge2bu2c320cfifbhvbgiv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAURpWgdPKbDnpVFbtXVF1GwrxNDG4ClAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704642875635-6ede1bgil9tge2bu2c320cfifbhvbgiv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "704642875635-8pkuugcsj0tel0boggg8b7c56ea8jmaq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hcg.dayaway.partner.qa"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704642875635:android:31fcb67f67a1d43bc4f786",
+        "android_client_info": {
+          "package_name": "com.hcg.dayaway.partner.qa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704642875635-sk3utqrfm6f3u52pb812534kuup1peva.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hcg.dayaway.partner.qa",
+            "certificate_hash": "4a0495d723f2601dddc734f3dd0eeafee4868fc9"
+          }
+        },
+        {
+          "client_id": "704642875635-6ede1bgil9tge2bu2c320cfifbhvbgiv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAURpWgdPKbDnpVFbtXVF1GwrxNDG4ClAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704642875635-6ede1bgil9tge2bu2c320cfifbhvbgiv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "704642875635-8pkuugcsj0tel0boggg8b7c56ea8jmaq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hcg.dayaway.partner.qa"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704642875635:android:55517d7b7d265106c4f786",
+        "android_client_info": {
+          "package_name": "com.hcg.dayaway.partner.stg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704642875635-07hne8s8ap90e6gkr4pjht7v9slck5eh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hcg.dayaway.partner.stg",
+            "certificate_hash": "4a0495d723f2601dddc734f3dd0eeafee4868fc9"
+          }
+        },
+        {
+          "client_id": "704642875635-6ede1bgil9tge2bu2c320cfifbhvbgiv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAURpWgdPKbDnpVFbtXVF1GwrxNDG4ClAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704642875635-6ede1bgil9tge2bu2c320cfifbhvbgiv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "704642875635-8pkuugcsj0tel0boggg8b7c56ea8jmaq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hcg.dayaway.partner.qa"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

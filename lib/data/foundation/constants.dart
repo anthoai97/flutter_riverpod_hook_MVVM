@@ -1,7 +1,7 @@
 import 'package:enum_to_string/enum_to_string.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-enum Flavor { development, production }
+enum Flavor { dev, qa, staging, production }
 
 abstract class SharePreferenceKey {
   static const String theme = 'theme';
@@ -25,8 +25,12 @@ class Constants {
     );
 
     switch (flavor) {
-      case Flavor.development:
+      case Flavor.dev:
         return Constants._dev();
+      case Flavor.qa:
+        return Constants._qa();
+      case Flavor.staging:
+        return Constants._stg();
       case Flavor.production:
         return Constants._prd();
       default:
@@ -37,8 +41,28 @@ class Constants {
   factory Constants._dev() {
     return const Constants._(
       endpoint: 'https://dawsvc-hotelier-dev.dayaway.sg/graphql',
-      env: Flavor.development,
-      packageName: "com.hcg.dayawaypartner.dev",
+      env: Flavor.dev,
+      packageName: "com.hcg.dayaway.partner.dev",
+      keycloakEndpoint:
+          'https://identity-dev.dayaway.sg/auth/realms/dayaway-hotelier/protocol/openid-connect',
+    );
+  }
+
+  factory Constants._qa() {
+    return const Constants._(
+      endpoint: 'https://dawsvc-hotelier-qa.dayaway.sg/graphql',
+      env: Flavor.qa,
+      packageName: "com.hcg.dayaway.partner.qa",
+      keycloakEndpoint:
+          'https://identity-qa.dayaway.sg/auth/realms/dayaway-hotelier/protocol/openid-connect',
+    );
+  }
+
+  factory Constants._stg() {
+    return const Constants._(
+      endpoint: 'https://dawsvc-hotelier-dev.dayaway.sg/graphql',
+      env: Flavor.staging,
+      packageName: "com.hcg.dayaway.partner.stg",
       keycloakEndpoint:
           'https://identity-dev.dayaway.sg/auth/realms/dayaway-hotelier/protocol/openid-connect',
     );
@@ -48,7 +72,7 @@ class Constants {
     return const Constants._(
       endpoint: 'https://dawsvc-hotelier-qa.dayaway.sg/graphql',
       env: Flavor.production,
-      packageName: "com.hcg.dayawaypartner",
+      packageName: "com.hcg.dayaway.partner",
       keycloakEndpoint:
           'https://identity-qa.dayaway.sg/auth/realms/dayaway-hotelier/protocol/openid-connect',
     );

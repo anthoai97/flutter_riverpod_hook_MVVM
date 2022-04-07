@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>704642875635-tc0sedqg7jr8kis88hsed2runs99njm4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.704642875635-tc0sedqg7jr8kis88hsed2runs99njm4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDkyaMZP6MbhuHFRTORg36jgWMb1JDGlgE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>704642875635</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.hcg.dayaway.partner.dev</string>
+	<key>PROJECT_ID</key>
+	<string>dayaway-partner-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dayaway-partner-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:704642875635:ios:e678040e5f2e87fdc4f786</string>
+</dict>
+</plist>

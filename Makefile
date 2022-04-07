@@ -25,7 +25,15 @@ build-watch:
 
 .PHONY: run-dev
 run-dev:
-	flutter run --flavor development --dart-define=FLAVOR=development --target lib/main.dart
+	flutter run --flavor dev --dart-define=FLAVOR=dev --target lib/main.dart
+
+.PHONY: run-qa
+run-qa:
+	flutter run --flavor qa --dart-define=FLAVOR=qa --target lib/main.dart
+
+.PHONY: run-stg
+run-stg:
+	flutter run --flavor staging --dart-define=FLAVOR=staging --target lib/main.dart
 
 .PHONY: run-prd
 run-prd:
@@ -33,7 +41,7 @@ run-prd:
 
 .PHONY: build-android-dev
 build-android-dev:
-	flutter build apk --flavor development --dart-define=FLAVOR=development --target lib/main.dart
+	flutter build apk --flavor dev --dart-define=FLAVOR=dev --target lib/main.dart
 
 .PHONY: build-android-prd
 build-android-prd:
@@ -41,7 +49,7 @@ build-android-prd:
 
 .PHONY: build-ios-dev
 build-ios-dev:
-	flutter build ios --no-codesign --flavor development --dart-define=FLAVOR=development --target lib/main.dart
+	flutter build ios --no-codesign --flavor dev --dart-define=FLAVOR=dev --target lib/main.dart
 
 .PHONY: build-ios-prd
 build-ios-prd:

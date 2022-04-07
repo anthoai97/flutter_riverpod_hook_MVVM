@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:dayaway_partner/data/foundation/helper/hepler.dart';
 import 'package:dayaway_partner/day_away_partner.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -19,6 +20,6 @@ void main() async {
   runZonedGuarded(() {
     runApp(const ProviderScope(child: DayAwayPartner()));
   }, (error, stackTrace) {
-    // FirebaseCrashlytics.instance.recordError(error, stackTrace);
+    FirebaseCrashlytics.instance.recordError(error, stackTrace);
   });
 }
