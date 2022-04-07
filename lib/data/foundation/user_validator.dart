@@ -2,6 +2,12 @@ import 'dart:async';
 
 import 'package:dayaway_partner/data/foundation/extentions/extention.dart';
 
+abstract class ValidateError {
+  static const String emailNotValid = 'emailNotValid';
+  static const String emailRequired = 'emailRequired';
+  static const String passwordChar = 'passwordChar';
+}
+
 mixin UserInfoValidators {
   final accountValidator =
       StreamTransformer<String, String>.fromHandlers(handleData: (email, sink) {
@@ -9,10 +15,10 @@ mixin UserInfoValidators {
       if (email.isValidEmail()) {
         sink.add(email);
       } else {
-        sink.addError('R.strings.emailNotValid');
+        sink.addError(ValidateError.emailNotValid);
       }
     } else {
-      sink.addError('R.strings.emailRequired');
+      sink.addError(ValidateError.emailRequired);
     }
   });
 
@@ -21,7 +27,7 @@ mixin UserInfoValidators {
     if (password.length > 1) {
       sink.add(password);
     } else {
-      sink.addError('R.strings.passwordChar');
+      sink.addError(ValidateError.passwordChar);
     }
   });
 

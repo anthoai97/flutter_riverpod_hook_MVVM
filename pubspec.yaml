@@ -69,6 +69,7 @@ dev_dependencies:
 
   # For model
   freezed: ^1.1.1
+  json_annotation: ^4.4.0
 
   # For Networking
   retrofit_generator: '>=4.0.0 <5.0.0'

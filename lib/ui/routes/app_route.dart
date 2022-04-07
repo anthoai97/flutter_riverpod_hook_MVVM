@@ -6,7 +6,7 @@ import 'package:dayaway_partner/ui/screen/experience/experience_page.dart';
 import 'package:dayaway_partner/ui/screen/home/home_page.dart';
 import 'package:dayaway_partner/ui/screen/profile/profile_page.dart';
 import 'package:dayaway_partner/ui/screen/qr_page/qr_page.dart';
-import 'package:dayaway_partner/ui/screen/sign_in/sign_in.dart';
+import 'package:dayaway_partner/ui/screen/sign_in/sign_in_page.dart';
 import 'package:dayaway_partner/ui/screen/splash/splash_screen.dart';
 
 export 'app_route.gr.dart';

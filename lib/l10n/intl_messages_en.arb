@@ -2,12 +2,7 @@
   "@@locale": "en",
   "ok": "OK",
   "cancel": "CANCEL",
-  "news": "News",
-  "signIn": "SignIn",
-  "video": "Video",
-  "googleSignIn": "Google Sign-In",
-  "googleSignOut": "Sign-Out",
-  "detail": "Detail",
+  "login": "Login",
   "error": "An error occurred",
   "reload": "Reload",
   "fetchFailed": "Could not get the data",
@@ -16,11 +11,29 @@
   "noTitle":  "No Title",
   "displayName": "Display Name",
   "email": "Email",
-  "uid": "UserId",
 
   "dashboard": "Dashboard",
   "booking": "Booking",
   "experience": "Experience",
   "setting": "Setting",
-  "loading": "Loading"
+  "loading": "Loading",
+  "password": "Password",
+  "yourPassword": "Your password",
+  "forgotPassword": "Forgot password",
+  "yourEmailAddress": "Your email address",
+  "emailNotValid": "Email is not valid",
+	"emailRequired": "Email is required",
+	"passwordChar": "Password length should be greater than {length} chars",
+  "@passwordChar": {
+    "placeholders": {
+      "length": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+	"firstNameRequired": "First name is required",
+	"lastNameRequired": "Last name is required",
+	"phoneNotValid": "Phone number is not valid",
+	"phoneRequired": "Phone number is required"
 }

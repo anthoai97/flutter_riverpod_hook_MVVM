@@ -7,13 +7,13 @@ import 'package:dayaway_partner/ui/component/input/mix_view.dart';
 import 'package:dayaway_partner/ui/component/loading/container_with_loading.dart';
 import 'package:dayaway_partner/ui/component/loading/loading_state_view_model.dart';
 import 'package:dayaway_partner/ui/hook/use_dimensions.dart';
+import 'package:dayaway_partner/ui/hook/use_l10n.dart';
 import 'package:dayaway_partner/ui/hook/use_router.dart';
 import 'package:dayaway_partner/ui/screen/sign_in/sign_in_view_model.dart';
 import 'package:dayaway_partner/ui/theme/app_text_theme.dart';
 import 'package:dayaway_partner/ui/theme/app_theme.dart';
 import 'package:dayaway_partner/ui/theme/font_size.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class SignInPage extends HookConsumerWidget with KeyboardHiderMixin {
@@ -27,14 +27,12 @@ class SignInPage extends HookConsumerWidget with KeyboardHiderMixin {
     final router = useRouter();
     final screenUtils = useDimension();
     final theme = ref.watch(appThemeProvider);
+    final l10n = useL10n();
     final viewModel = ref.read(sigInViewModelProvider);
 
     const double _fieldSpacing = DimensionsDef.globalPadding;
     const double _fieldLabelSpacing = 4;
     const double _fieldInputHeight = 44;
-
-    final _emailTextController = useTextEditingController();
-    final _passwordTextController = useTextEditingController();
 
     Widget _buildSubmitBtn() {
       return StreamBuilder<bool>(
@@ -53,9 +51,7 @@ class SignInPage extends HookConsumerWidget with KeyboardHiderMixin {
                           () async {
                             return ref
                                 .read(sigInViewModelProvider)
-                                .sigInWithEmailAndPassword(
-                                    _emailTextController.text,
-                                    _passwordTextController.text)
+                                .sigInWithEmailAndPassword()
                                 .then(
                                   (value) => value.when(
                                     success: (data) {
@@ -64,9 +60,9 @@ class SignInPage extends HookConsumerWidget with KeyboardHiderMixin {
                                     },
                                     failure: (error) {
                                       showCustomFailAlertDialog(context,
-                                          title: "Error",
+                                          title: l10n.error,
                                           content: error.message,
-                                          firstButtonText: "Close",
+                                          firstButtonText: l10n.ok,
                                           firstButtonFunction: () =>
                                               router.pop());
                                       return null;
@@ -77,7 +73,7 @@ class SignInPage extends HookConsumerWidget with KeyboardHiderMixin {
                         );
                       }
                     : null,
-                child: const Text('Login'),
+                child: Text(l10n.login),
               ),
             );
           });
@@ -143,7 +139,7 @@ class SignInPage extends HookConsumerWidget with KeyboardHiderMixin {
                               padding:
                                   const EdgeInsets.only(bottom: _fieldSpacing),
                               child: Text(
-                                'Login'.toUpperCase(),
+                                l10n.login.toUpperCase(),
                                 style: theme.textTheme.h50.bold(),
                                 textAlign: TextAlign.center,
                               ),
@@ -154,7 +150,7 @@ class SignInPage extends HookConsumerWidget with KeyboardHiderMixin {
                               padding: const EdgeInsets.only(
                                   bottom: _fieldLabelSpacing),
                               child: Text(
-                                'emailAddress',
+                                l10n.email,
                                 style: theme.textTheme.h30,
                               ),
                             ),
@@ -167,11 +163,10 @@ class SignInPage extends HookConsumerWidget with KeyboardHiderMixin {
                                     children: [
                                       MixedView(
                                         height: _fieldInputHeight,
-                                        textHint: 'yourEmailAddress',
+                                        textHint: l10n.yourEmailAddress,
                                         hintStyle: theme.textTheme.h30.copyWith(
                                           color: theme.appColors.primary70,
                                         ),
-                                        textController: _emailTextController,
                                         maxLines: 1,
                                         textInputType:
                                             TextInputType.emailAddress,
@@ -194,7 +189,7 @@ class SignInPage extends HookConsumerWidget with KeyboardHiderMixin {
                               padding: const EdgeInsets.only(
                                   bottom: _fieldLabelSpacing),
                               child: Text(
-                                'R.strings.password',
+                                l10n.password,
                                 style: theme.textTheme.h30,
                               ),
                             ),
@@ -207,11 +202,10 @@ class SignInPage extends HookConsumerWidget with KeyboardHiderMixin {
                                     children: [
                                       MixedView(
                                         height: _fieldInputHeight,
-                                        textHint: "R.strings.yourPassword",
+                                        textHint: l10n.yourPassword,
                                         hintStyle: theme.textTheme.h30.copyWith(
                                           color: theme.appColors.primary70,
                                         ),
-                                        textController: _passwordTextController,
                                         onChangedDataCallback:
                                             viewModel.passwordChanged,
                                         maxLines: 1,
@@ -242,7 +236,7 @@ class SignInPage extends HookConsumerWidget with KeyboardHiderMixin {
                                       Log.debug("Forget password");
                                     },
                                     child: Text(
-                                      'R.strings.forgotPassword',
+                                      l10n.forgotPassword,
                                       style: theme.textTheme.h30.bold(),
                                     ),
                                   )

@@ -2,25 +2,38 @@
   "@@locale": "ja",
   "ok": "OK",
   "cancel": "CANCEL",
-  "news": "ニュース",
-  "signIn": "ログイン",
-  "video": "ビデオ",
-  "googleSignIn": "Google サインイン",
-  "googleSignOut": "サインアウト",
-  "detail": "詳細",
-  "error": "エラーが発生しました",
-  "reload": "更新する",
-  "fetchFailed": "データの取得に失敗しました",
-  "pleaseRetry": "もう一度お試しください",
-  "noResult": "データがありません!",
+  "login": "Login",
+  "error": "An error occurred",
+  "reload": "Reload",
+  "fetchFailed": "Could not get the data",
+  "pleaseRetry": "Please try again",
+  "noResult": "For Empty screen",
   "noTitle":  "No Title",
   "displayName": "Display Name",
-  "email": "メール",
-  "uid": "ユーザID",
+  "email": "Email",
 
   "dashboard": "Dashboard",
   "booking": "Booking",
   "experience": "Experience",
   "setting": "Setting",
-  "loading": "Loading"
+  "loading": "Loading",
+  "password": "Password",
+  "yourPassword": "Your password",
+  "forgotPassword": "Forgot password",
+  "yourEmailAddress": "Your email address",
+  "emailNotValid": "Email is not valid",
+	"emailRequired": "Email is required",
+	"passwordChar": "Password length should be greater than {length} chars",
+  "@passwordChar": {
+    "placeholders": {
+      "length": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+	"firstNameRequired": "First name is required",
+	"lastNameRequired": "Last name is required",
+	"phoneNotValid": "Phone number is not valid",
+	"phoneRequired": "Phone number is required"
 }

@@ -2,9 +2,9 @@ import 'package:dayaway_partner/data/foundation/user_validator.dart';
 import 'package:dayaway_partner/data/models/result.dart';
 import 'package:dayaway_partner/ui/provider/auth_service_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rxdart/streams.dart';
+import 'package:rxdart/subjects.dart';
 
 final sigInViewModelProvider =
     ChangeNotifierProvider((ref) => SignInViewModel(ref.read));
@@ -16,8 +16,8 @@ class SignInViewModel extends ChangeNotifier with UserInfoValidators {
 
   late final AuthService _authService = _reader(authServiceProvider);
 
-  final _passwordStreamController = useStreamController<String>();
-  final _emailStreamController = useStreamController<String>();
+  final _passwordStreamController = BehaviorSubject<String>();
+  final _emailStreamController = BehaviorSubject<String>();
 
   Function(String) get accountChanged => _emailStreamController.sink.add;
 
@@ -32,9 +32,9 @@ class SignInViewModel extends ChangeNotifier with UserInfoValidators {
   Stream<bool> get submitCheck =>
       CombineLatestStream.combine2(account, password, (e, p) => true);
 
-  Future<Result> sigInWithEmailAndPassword(String email, String password) {
+  Future<Result> sigInWithEmailAndPassword() {
     return _authService.signInWithEmailAndPassword(
-      email, password,
+      _emailStreamController.value, _passwordStreamController.value,
       // 'admin.hcg@dayaway.com',
       // '123',
     );
