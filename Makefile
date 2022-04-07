@@ -43,6 +43,14 @@ run-prd:
 build-android-dev:
 	flutter build apk --flavor dev --dart-define=FLAVOR=dev --target lib/main.dart
 
+.PHONY: build-android-qa
+build-android-qa:
+	flutter build apk --flavor qa --dart-define=FLAVOR=qa --target lib/main.dart
+
+.PHONY: build-android-stg
+build-android-stg:
+	flutter build apk --flavor staging --dart-define=FLAVOR=staging --target lib/main.dart
+
 .PHONY: build-android-prd
 build-android-prd:
 	flutter build apk --release --flavor production --dart-define=FLAVOR=production --target lib/main.dart
