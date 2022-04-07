@@ -12,6 +12,8 @@ class SharedPreferencesService {
 
   SharedPreferencesService(this._sharedPrefManager);
 
+  Future<void> removeAll() async => _sharedPrefManager.removeAllData();
+
   // Theme
   String? get theme {
     return _sharedPrefManager.getData<String>(SharePreferenceKey.theme);

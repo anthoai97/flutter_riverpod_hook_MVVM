@@ -46,7 +46,6 @@ class AppTheme {
 
   static ButtonThemeData _buildButtonThemeData(AppColors colors) {
     return const ButtonThemeData().copyWith(
-      height: 44,
       padding: _buttonPadding,
       minWidth: double.infinity,
       disabledColor: colors.disabled,
@@ -57,8 +56,8 @@ class AppTheme {
     );
   }
 
-  static const EdgeInsets _buttonPadding =
-      EdgeInsets.symmetric(horizontal: DimensionsDef.globalPadding);
+  static const EdgeInsets _buttonPadding = EdgeInsets.symmetric(
+      horizontal: DimensionsDef.globalPadding, vertical: 10);
 
   static final TextStyle _buttonTextStyle = GoogleFonts.poppins(
       textStyle: const TextStyle(

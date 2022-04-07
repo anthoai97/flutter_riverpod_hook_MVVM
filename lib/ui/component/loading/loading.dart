@@ -9,12 +9,19 @@ class Loading extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(appThemeProvider);
-
-    return Center(
-      child: NutsActivityIndicator(
-        activeColor: theme.appColors.primary100,
-        inactiveColor: theme.appColors.primary70,
-        radius: 10.0,
+    return SafeArea(
+      child: Container(
+        alignment: Alignment.center,
+        constraints: const BoxConstraints(
+          minWidth: double.infinity,
+          minHeight: double.infinity,
+        ),
+        color: Colors.white.withOpacity(0.3),
+        child: NutsActivityIndicator(
+          activeColor: theme.appColors.primary100,
+          inactiveColor: theme.appColors.primary70,
+          radius: 10.0,
+        ),
       ),
     );
   }

@@ -1,6 +1,5 @@
 import 'package:dayaway_partner/gen/assets.gen.dart';
 import 'package:dayaway_partner/ui/hook/use_dimensions.dart';
-import 'package:dayaway_partner/ui/hook/use_l10n.dart';
 import 'package:dayaway_partner/ui/theme/app_text_theme.dart';
 import 'package:dayaway_partner/ui/theme/app_theme.dart';
 import 'package:flutter/material.dart';
@@ -142,7 +141,6 @@ class _CustomAlertDialog extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = useL10n();
     final theme = ref.watch(appThemeProvider);
     final screenUtils = useDimension();
 

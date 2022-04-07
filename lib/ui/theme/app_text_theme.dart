@@ -17,7 +17,7 @@ class AppTextTheme {
   factory AppTextTheme({required defaultTextColor}) {
     final _normalRegular = TextStyle(
       fontWeight: FontWeight.w400,
-      height: 1.5,
+      height: 1.3,
       leadingDistribution: TextLeadingDistribution.even,
       color: defaultTextColor,
     );

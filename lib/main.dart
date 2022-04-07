@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:dayaway_partner/data/foundation/helper/hepler.dart';
 import 'package:dayaway_partner/day_away_partner.dart';
+import 'package:dayaway_partner/ui/component/widget/restart.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,13 @@ void main() async {
   await Helper.initLibrary();
 
   runZonedGuarded(() {
-    runApp(const ProviderScope(child: DayAwayPartner()));
+    runApp(
+      const RestartWidget(
+        child: ProviderScope(
+          child: DayAwayPartner(),
+        ),
+      ),
+    );
   }, (error, stackTrace) {
     FirebaseCrashlytics.instance.recordError(error, stackTrace);
   });

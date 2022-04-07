@@ -13,7 +13,7 @@ class SplashPage extends HookConsumerWidget {
     final router = useRouter();
 
     useAsyncEffect(() async {
-      await Future.delayed(const Duration(seconds: 2));
+      await Future.delayed(const Duration(seconds: 1));
       router.replace(const HomeRoute());
     }, null, []);
 
