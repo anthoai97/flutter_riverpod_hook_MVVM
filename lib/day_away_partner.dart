@@ -1,4 +1,5 @@
 import 'package:dayaway_partner/ui/routes/app_route.dart';
+import 'package:dayaway_partner/ui/routes/route_guard.dart';
 import 'package:dayaway_partner/ui/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -13,7 +14,8 @@ class DayAwayPartner extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(appThemeProvider);
     final themeMode = ref.watch(appThemeModeProvider);
-    final appRouter = useMemoized(() => AppRouter());
+    final appRouter =
+        useMemoized(() => AppRouter(authGuard: ref.read(authGuardProvider)));
 
     return MaterialApp.router(
       title: 'DayAway Partner',

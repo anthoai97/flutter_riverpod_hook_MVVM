@@ -21,5 +21,6 @@
   "dashboard": "Dashboard",
   "booking": "Booking",
   "experience": "Experience",
-  "setting": "Setting"
+  "setting": "Setting",
+  "loading": "Loading"
 }

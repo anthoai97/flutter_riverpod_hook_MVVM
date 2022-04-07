@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hcg.dayawaypartner.dayaway_partner">
+    package="com.hcg.dayawaypartner">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 

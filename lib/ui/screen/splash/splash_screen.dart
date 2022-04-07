@@ -15,9 +15,7 @@ class SplashPage extends HookConsumerWidget {
     useAsyncEffect(() async {
       await Future.delayed(const Duration(seconds: 2));
       router.replace(const HomeRoute());
-    }, () {
-      print('Pop screen success');
-    }, []);
+    }, null, []);
 
     return Scaffold(
       backgroundColor: const Color(0xFFFFFFFF),

@@ -1,4 +1,4 @@
-import 'package:dayaway_partner/data/app_error.dart';
+import 'package:dayaway_partner/data/foundation/app_error.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'result.freezed.dart';
@@ -22,8 +22,12 @@ abstract class Result<T> with _$Result<T> {
   static Future<Result<T>> guardFuture<T>(Future<T> Function() future) async {
     try {
       return Result.success(data: await future());
-    } on Exception catch (e) {
-      return Result.failure(error: AppError(e));
+    } catch (e) {
+      if (e is Exception) {
+        return Result.failure(error: AppError(e));
+      } else {
+        return Result.failure(error: AppError(Exception(e.toString())));
+      }
     }
   }
 

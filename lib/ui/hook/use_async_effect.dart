@@ -10,7 +10,6 @@ void useAsyncEffect(
   useEffect(() {
     Future.microtask(effect);
     return () {
-      print('adas');
       if (cleanup != null) {
         Future.microtask(cleanup);
       }

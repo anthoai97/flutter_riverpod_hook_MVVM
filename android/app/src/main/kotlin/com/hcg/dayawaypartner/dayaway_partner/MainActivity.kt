@@ -1,4 +1,4 @@
-package com.hcg.dayawaypartner.dayaway_partner
+package com.hcg.dayawaypartner
 
 import io.flutter.embedding.android.FlutterActivity
 

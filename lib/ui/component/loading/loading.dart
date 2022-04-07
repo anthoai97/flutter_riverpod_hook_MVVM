@@ -12,8 +12,9 @@ class Loading extends ConsumerWidget {
 
     return Center(
       child: NutsActivityIndicator(
-        activeColor: theme.appColors.accent,
-        radius: 8.0,
+        activeColor: theme.appColors.primary100,
+        inactiveColor: theme.appColors.primary70,
+        radius: 10.0,
       ),
     );
   }

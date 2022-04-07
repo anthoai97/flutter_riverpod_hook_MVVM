@@ -1,4 +1,4 @@
-import 'package:dayaway_partner/data/foundation/shared_pref_manager.dart';
+import 'package:dayaway_partner/data/foundation/helper/shared_pref_manager.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
