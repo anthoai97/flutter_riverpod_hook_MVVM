@@ -16,6 +16,7 @@ class Constants {
     required this.env,
     required this.packageName,
     required this.keycloakEndpoint,
+    required this.clientSecret,
   });
 
   factory Constants.of() {
@@ -40,42 +41,42 @@ class Constants {
 
   factory Constants._dev() {
     return const Constants._(
-      endpoint: 'https://dawsvc-hotelier-dev.dayaway.sg/graphql',
-      env: Flavor.dev,
-      packageName: "com.hcg.dayaway.partner.dev",
-      keycloakEndpoint:
-          'https://identity-dev.dayaway.sg/auth/realms/dayaway-hotelier/protocol/openid-connect',
-    );
+        endpoint: 'https://dawsvc-hotelier-dev.dayaway.sg/graphql',
+        env: Flavor.dev,
+        packageName: "com.hcg.dayaway.partner.dev",
+        keycloakEndpoint:
+            'https://identity-dev.dayaway.sg/auth/realms/dayaway-hotelier/protocol/openid-connect',
+        clientSecret: 'fe23cbc7-5469-44d6-b970-83522c89ec70');
   }
 
   factory Constants._qa() {
     return const Constants._(
-      endpoint: 'https://dawsvc-hotelier-qa.dayaway.sg/graphql',
-      env: Flavor.qa,
-      packageName: "com.hcg.dayaway.partner.qa",
-      keycloakEndpoint:
-          'https://identity-qa.dayaway.sg/auth/realms/dayaway-hotelier/protocol/openid-connect',
-    );
+        endpoint: 'https://dawsvc-hotelier-qa.dayaway.sg/graphql',
+        env: Flavor.qa,
+        packageName: "com.hcg.dayaway.partner.qa",
+        keycloakEndpoint:
+            'https://identity-qa.dayaway.sg/auth/realms/dayaway-hotelier/protocol/openid-connect',
+        clientSecret: 'fe23cbc7-5469-44d6-b970-83522c89ec70');
   }
 
   factory Constants._stg() {
     return const Constants._(
-      endpoint: 'https://dawsvc-hotelier-dev.dayaway.sg/graphql',
-      env: Flavor.staging,
-      packageName: "com.hcg.dayaway.partner.stg",
-      keycloakEndpoint:
-          'https://identity-dev.dayaway.sg/auth/realms/dayaway-hotelier/protocol/openid-connect',
-    );
+        endpoint: 'https://dawsvc-hotelier-dev.dayaway.sg/graphql',
+        env: Flavor.staging,
+        packageName: "com.hcg.dayaway.partner.stg",
+        keycloakEndpoint:
+            'https://identity-dev.dayaway.sg/auth/realms/dayaway-hotelier/protocol/openid-connect',
+        clientSecret: 'fe23cbc7-5469-44d6-b970-83522c89ec70');
   }
 
   factory Constants._prd() {
     return const Constants._(
-      endpoint: 'https://dawsvc-hotelier-qa.dayaway.sg/graphql',
-      env: Flavor.production,
-      packageName: "com.hcg.dayaway.partner",
-      keycloakEndpoint:
-          'https://identity-qa.dayaway.sg/auth/realms/dayaway-hotelier/protocol/openid-connect',
-    );
+        endpoint: 'https://dawsvc-hotelier-qa.dayaway.sg/graphql',
+        env: Flavor.production,
+        packageName: "com.hcg.dayaway.partner",
+        keycloakEndpoint:
+            'https://identity-qa.dayaway.sg/auth/realms/dayaway-hotelier/protocol/openid-connect',
+        clientSecret: 'fe23cbc7-5469-44d6-b970-83522c89ec70');
   }
 
   static late final Constants instance = Constants.of();
@@ -84,6 +85,7 @@ class Constants {
   final Flavor env;
   final String packageName;
 
-  final String clientId = 'dayaway-hotelier-site';
+  final String clientId = 'dayaway-hotelier-services';
+  final String clientSecret;
   final String keycloakEndpoint;
 }

@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:dayaway_partner/ui/routes/route_guard.dart';
 import 'package:dayaway_partner/ui/screen/booking/booking_page.dart';
+import 'package:dayaway_partner/ui/screen/booking_detail/booking_detail_page.dart';
 import 'package:dayaway_partner/ui/screen/dashboard/dashboard_page.dart';
 import 'package:dayaway_partner/ui/screen/experience/experience_page.dart';
 import 'package:dayaway_partner/ui/screen/home/home_page.dart';
@@ -46,11 +47,15 @@ export 'app_route.gr.dart';
           path: 'profile',
           page: ProfilePage,
         ),
-        AutoRoute(
-          path: 'qr',
-          page: QRPage,
-        ),
       ],
+    ),
+    AutoRoute(
+      path: 'qr',
+      page: QRPage,
+    ),
+    AutoRoute(
+      path: 'bookingDetail',
+      page: BookingDetailPage,
     ),
   ],
 )

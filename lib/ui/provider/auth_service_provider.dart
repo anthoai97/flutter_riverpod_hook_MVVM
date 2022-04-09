@@ -1,3 +1,4 @@
+import 'package:dayaway_partner/data/foundation/constants.dart';
 import 'package:dayaway_partner/data/local/shared_pref_service.dart';
 import 'package:dayaway_partner/data/models/keycloak.dart';
 import 'package:dayaway_partner/data/models/result.dart';
@@ -25,7 +26,8 @@ class AuthService {
       'grant_type': 'password',
       'username': email,
       'password': password,
-      'client_id': 'dayaway-hotelier-site'
+      'client_id': Constants.of().clientId,
+      'client_secret': Constants.of().clientSecret
     };
 
     var result = await _repositoryImpl.loginKeyClock(body);

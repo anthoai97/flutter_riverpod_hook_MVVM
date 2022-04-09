@@ -1,21 +1,25 @@
 import 'package:dayaway_partner/data/foundation/constants.dart';
-import 'package:dayaway_partner/data/models/base_response.dart';
-import 'package:dayaway_partner/ui/provider/api_service_provider.dart';
+import 'package:dayaway_partner/data/models/keycloak.dart';
+import 'package:dayaway_partner/data/remote/dio_provider.dart';
 import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final authDataSourceProvider =
-    Provider(((ref) => AuthDataSource(ref.read(apiServiceProvider))));
+    Provider(((ref) => AuthDataSource(ref.read(dioProvider))));
 
 class AuthDataSource {
-  final ApiService _apiService;
+  final Dio _dio;
 
-  AuthDataSource(this._apiService);
+  AuthDataSource(this._dio);
 
-  Future<DayAwayResponse> loginKeyClock(Map<String, dynamic> body) async {
-    return _apiService.post(Constants.of().keycloakEndpoint + '/token',
-        body: body,
-        options: Options(
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'}));
+  Future<KeyCloak> loginKeyClock(Map<String, dynamic> body) async {
+    var result = await _dio.post(
+      Constants.of().keycloakEndpoint + '/token',
+      data: body,
+      options: Options(
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      ),
+    );
+    return KeyCloak.fromJson(result.data);
   }
 }

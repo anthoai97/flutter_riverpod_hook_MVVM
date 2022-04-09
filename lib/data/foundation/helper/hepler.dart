@@ -33,7 +33,8 @@ class Helper {
 
     /// Crashlytics
     await FirebaseCrashlytics.instance
-        .setCrashlyticsCollectionEnabled(kDebugMode);
+        .setCrashlyticsCollectionEnabled(!kDebugMode);
+
     Function originalOnError = FlutterError.onError!;
     FlutterError.onError = (errorDetails) async {
       await FirebaseCrashlytics.instance.recordFlutterError(errorDetails);

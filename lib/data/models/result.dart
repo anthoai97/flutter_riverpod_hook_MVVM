@@ -4,10 +4,13 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'result.freezed.dart';
 
 @freezed
-abstract class Result<T> with _$Result<T> {
+class Result<T> with _$Result<T> {
   const Result._();
 
-  const factory Result.success({required T data}) = Success<T>;
+  const factory Result.success(
+      {required T data,
+      @Default(0) int count,
+      @Default(1) totalPage}) = Success<T>;
 
   const factory Result.failure({required AppError error}) = Failure<T>;
 
@@ -19,7 +22,9 @@ abstract class Result<T> with _$Result<T> {
     }
   }
 
-  static Future<Result<T>> guardFuture<T>(Future<T> Function() future) async {
+  static Future<Result<T>> guardFuture<T>(
+    Future<T> Function() future,
+  ) async {
     try {
       return Result.success(data: await future());
     } catch (e) {
@@ -31,13 +36,14 @@ abstract class Result<T> with _$Result<T> {
     }
   }
 
-  bool get isSuccess => when(success: (data) => true, failure: (e) => false);
+  bool get isSuccess =>
+      when(success: (data, count, totalPage) => true, failure: (e) => false);
 
   bool get isFailure => !isSuccess;
 
   void ifSuccess(Function(T data) body) {
     maybeWhen(
-      success: (data) => body(data),
+      success: (data, count, totalPage) => body(data),
       orElse: () {
         // no-op
       },
@@ -55,7 +61,7 @@ abstract class Result<T> with _$Result<T> {
 
   T get dataOrThrow {
     return when(
-      success: (data) => data,
+      success: (data, count, totalPage) => data,
       failure: (e) => throw e,
     );
   }

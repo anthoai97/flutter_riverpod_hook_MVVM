@@ -19,8 +19,7 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   Future<Result<KeyCloak>> loginKeyClock(Map<String, dynamic> body) async {
     return Result.guardFuture(() async {
-      var result = await _dataSource.loginKeyClock(body);
-      return KeyCloak.fromJson(result.data);
+      return _dataSource.loginKeyClock(body);
     });
   }
 }

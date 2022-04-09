@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:dayaway_partner/gen/assets.gen.dart';
 import 'package:dayaway_partner/ui/component/image/image_widget.dart';
 import 'package:dayaway_partner/ui/hook/use_l10n.dart';
+import 'package:dayaway_partner/ui/hook/use_router.dart';
 import 'package:dayaway_partner/ui/routes/app_route.dart';
 import 'package:dayaway_partner/ui/routes/app_route.gr.dart';
 import 'package:dayaway_partner/ui/theme/app_theme.dart';
@@ -15,6 +16,7 @@ class HomePage extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(appThemeProvider);
     final l10n = useL10n();
+    final router = useRouter();
 
     Widget _buildTabItem({
       required Function() onTapItem,
@@ -27,7 +29,7 @@ class HomePage extends HookConsumerWidget {
       return Expanded(
         flex: 2,
         child: Container(
-          padding: const EdgeInsets.only(top: 6),
+          padding: const EdgeInsets.only(top: 8, bottom: 8),
           child: Material(
             type: MaterialType.transparency,
             child: InkWell(
@@ -65,7 +67,8 @@ class HomePage extends HookConsumerWidget {
       ],
       extendBody: true,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => router.push(
+            BookingDetailRoute(id: 'f8bc3fa1-ee02-4a1e-aafb-576afb6bb2d4')),
         backgroundColor: theme.appColors.accent,
         child: Container(
           alignment: Alignment.center,

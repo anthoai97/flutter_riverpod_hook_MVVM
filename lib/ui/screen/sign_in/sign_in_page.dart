@@ -54,7 +54,7 @@ class SignInPage extends HookConsumerWidget with KeyboardHiderMixin {
                                 .sigInWithEmailAndPassword()
                                 .then(
                                   (value) => value.when(
-                                    success: (data) {
+                                    success: (data, count, totalPage) {
                                       onResult(true);
                                       return null;
                                     },
@@ -124,7 +124,9 @@ class SignInPage extends HookConsumerWidget with KeyboardHiderMixin {
                         width: screenUtils.screenWidth,
                         constraints: BoxConstraints(
                             minHeight: screenUtils.screenHeight * 0.5),
-                        padding: const EdgeInsets.all(_fieldSpacing),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: _fieldSpacing * 2,
+                            horizontal: _fieldSpacing),
                         decoration: const BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(

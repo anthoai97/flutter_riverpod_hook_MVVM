@@ -6,6 +6,10 @@ import 'package:dayaway_partner/data/foundation/log.dart';
 import 'package:dayaway_partner/data/local/shared_pref_service.dart';
 import 'package:dayaway_partner/data/models/keycloak.dart';
 import 'package:dio/dio.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+final dioProvider = Provider(
+    (ref) => NetWorkModule.provideDio(ref.read(sharedPrefServiceProvider)));
 
 abstract class NetWorkModule {
   static Dio provideDio(SharedPreferencesService _sharePef) {
@@ -15,6 +19,7 @@ abstract class NetWorkModule {
       receiveDataWhenStatusError: true,
       connectTimeout: 30 * 1000, //60 secs
       receiveTimeout: 30 * 1000,
+      baseUrl: Constants.of().endpoint,
     );
 
     dio = Dio(options);
